@@ -1,9 +1,6 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: "/src/index.js",
@@ -25,15 +22,13 @@ module.exports = {
           },
         },
         {
-          test: /.css$/,
-          use: [ MiniCssExtractPlugin.loader, 'css-loader'],
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
         },
-      ],
-    },
-    optimization: {
-      minimizer: [
-        new CssMinimizerPlugin(),
-        new TerserPlugin(),
+        {
+          test: /\.scss$/,
+          use: [ 'style-loader', 'css-loader', 'sass-loader'],
+        },
       ],
     },
     plugins: [
@@ -48,9 +43,6 @@ module.exports = {
         options: {
           concurrency: 100,
         },
-      }),
-      new MiniCssExtractPlugin({
-        filename: '[name].[fullhash].css',
       }),
     ],
   };

@@ -3,12 +3,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    entry: "/src/index.js",
-    output: { 
-        filename: '[fullhash].bundle.js',
-        path: path.resolve(__dirname, "dist"),
-        clean: true
-    },
+    entry: "/src/index.js",    
     module: {
       rules: [
         {
@@ -30,6 +25,11 @@ module.exports = {
           use: [ 'style-loader', 'css-loader', 'sass-loader'],
         },
       ],
+    },
+    output: { 
+      filename: '[fullhash].bundle.js',
+      path: path.resolve(__dirname, "dist"),
+      clean: true
     },
     plugins: [
       new HtmlWebPackPlugin({

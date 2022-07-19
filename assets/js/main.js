@@ -4,7 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+jQuery(document).ready(function($) {
 
 	var	$window = $(window),
 		$head = $('head'),
@@ -89,7 +89,7 @@
 					.appendTo($head);
 
 		// Toggle.
-			$('<a href="#sidebar" className="toggle">Toggle</a>')
+			$('<a href="#sidebar" class="toggle">Toggle</a>')
 				.appendTo($sidebar)
 				.on('click', function(event) {
 
@@ -259,4 +259,4 @@
 
 			});
 
-})(jQuery);
+});

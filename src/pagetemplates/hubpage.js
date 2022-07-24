@@ -5,7 +5,7 @@ import HubLinks from "../components/navigation/hublinks";
 const HubPage = () => {
     return (
         <React.Fragment>
-            <Content />
+            <Content title="Hub Page" pic="images/pic04.jpg" />
             <HubLinks />
         </React.Fragment>        
     );

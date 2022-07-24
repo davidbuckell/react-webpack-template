@@ -1,18 +1,19 @@
 import React from "react";
-import Header from "./components/pagestructure/header";
+import { Route, Routes } from 'react-router-dom';
 import HomePage from "./pagetemplates/homepage";
-import SideNavigation from "./components/pagestructure/sidenavigation";
+import HubPage from "./pagetemplates/hubpage";
+import ContentPage from "./pagetemplates/contentpage";
+import Layout from "./components/pagestructure/layout";
 
 export default function App() {
   return (
-    <React.Fragment>
-      <div id="main">
-        <div className="inner">
-          <Header />
-          <HomePage />
-        </div>
-      </div>
-      <SideNavigation />
-    </React.Fragment>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="hub" element={<HubPage />} />
+        <Route path="content" element={<ContentPage />} />
+        <Route path="*" element={<div>Oops! nothing here</div>} />
+      </Route>
+    </Routes>
   );
 }

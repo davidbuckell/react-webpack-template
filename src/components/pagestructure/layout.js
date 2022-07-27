@@ -1,31 +1,12 @@
 import React from "react";
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Header from "./header";
 import SideNavigation from "./sidenavigation";
 import { motion } from "framer-motion";
 
 const PageLayout = ({ children }) => children;
 
-const pageVariants = {
-    initial: {
-        opacity: 0
-    },
-    in: {
-        opacity: 1
-    },
-    out: {
-        opacity: 0
-    }
-};
-
-const pageTransition = {
-    type: "tween",
-    ease: "linear",
-    duration: 0.5
-};
-
 function Layout() {
-    const { pathname } = useLocation();
 
     return (
         <React.Fragment>
@@ -37,11 +18,9 @@ function Layout() {
                     <Link to="content">Content</Link>
                     <PageLayout>
                         <motion.div
-                            key={pathname}
-                            initial="initial"
-                            animate="in"
-                            variants={pageVariants}
-                            transition={pageTransition}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
                         >
                             <Outlet />
                         </motion.div>

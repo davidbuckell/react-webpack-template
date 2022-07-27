@@ -1,5 +1,5 @@
 {
-  "name": "react-foundation-template",
+  "name": "react-webpack-template",
   "version": "1.0.0",
   "description": "Headless react application built with webpack that supports azure authentication &amp; navigation animation",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidbuckell/react-foundation-template.git"
+    "url": "git+https://github.com/davidbuckell/react-webpack-template.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/davidbuckell/react-foundation-template/issues"
+    "url": "https://github.com/davidbuckell/react-webpack-template/issues"
   },
-  "homepage": "https://github.com/davidbuckell/react-foundation-template#readme",
+  "homepage": "https://github.com/davidbuckell/react-webpack-template#readme",
   "dependencies": {
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",

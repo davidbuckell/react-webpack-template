@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function NavigationLinks() {
     return (
@@ -6,10 +7,10 @@ function NavigationLinks() {
             <header className="major">
                 <h2>Menu</h2>
             </header>
-            <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="generic.html">Generic</a></li>
-                <li><a href="elements.html">Elements</a></li>
+            <ul>                    
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="hub">Hub</Link></li>
+                <li><Link to="content">Content</Link></li>
                 <li>
                     <span className="opener">Submenu</span>
                     <ul>

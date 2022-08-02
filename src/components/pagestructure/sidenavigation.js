@@ -7,7 +7,7 @@ import Footer from "./footer";
 function SideNavigation() {
     return (
         <div id="sidebar">
-            <div className="inner">            
+            <div className="inner">                
                 <Search />
                 <NavigationLinks />
                 <NavigationHubLinks />

@@ -4,11 +4,11 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-jQuery(document).ready(function($) {
+window.executeMainJs = function($) {
 
-	var	$window = $(window),
-		$head = $('head'),
-		$body = $('body');
+	var	$window = jQuery(window),
+		$head = jQuery('head'),
+		$body = jQuery('body');
 
 	// Breakpoints.
 		breakpoints({
@@ -53,9 +53,9 @@ jQuery(document).ready(function($) {
 		// Object fit images.
 			if (!browser.canUse('object-fit')
 			||	browser.name == 'safari')
-				$('.image.object').each(function() {
+				jQuery('.image.object').each(function() {
 
-					var $this = $(this),
+					var $this = jQuery(this),
 						$img = $this.children('img');
 
 					// Hide original image.
@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
 				});
 
 	// Sidebar.
-		var $sidebar = $('#sidebar'),
+		var $sidebar = jQuery('#sidebar'),
 			$sidebar_inner = $sidebar.children('.inner');
 
 		// Inactive by default on <= large.
@@ -85,11 +85,11 @@ jQuery(document).ready(function($) {
 		// Hack: Workaround for Chrome/Android scrollbar position bug.
 			if (browser.os == 'android'
 			&&	browser.name == 'chrome')
-				$('<style>#sidebar .inner::-webkit-scrollbar { display: none; }</style>')
+				jQuery('<style>#sidebar .inner::-webkit-scrollbar { display: none; }</style>')
 					.appendTo($head);
 
 		// Toggle.
-			$('<a href="#sidebar" class="toggle">Toggle</a>')
+			jQuery('<a href="#sidebar" class="toggle">Toggle</a>')
 				.appendTo($sidebar)
 				.on('click', function(event) {
 
@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
 							return;
 
 					// Vars.
-						var $a = $(this),
+						var $a = jQuery(this),
 							href = $a.attr('href'),
 							target = $a.attr('target');
 
@@ -235,13 +235,13 @@ jQuery(document).ready(function($) {
 				});
 
 	// Menu.
-		var $menu = $('#menu'),
+		var $menu = jQuery('#menu'),
 			$menu_openers = $menu.children('ul').find('.opener');
 
 		// Openers.
 			$menu_openers.each(function() {
 
-				var $this = $(this);
+				var $this = jQuery(this);
 
 				$this.on('click', function(event) {
 
@@ -259,4 +259,4 @@ jQuery(document).ready(function($) {
 
 			});
 
-});
+};

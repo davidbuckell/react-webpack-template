@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 
 const PageLayout = ({ children }) => children;
 
-function Layout() {
-
+const Layout = () => {     
     return (
         <React.Fragment>
             <div id="main">
@@ -28,7 +27,7 @@ function Layout() {
                 </div>
             </div>
             <SideNavigation />
-        </React.Fragment >
+        </React.Fragment>
     );
 }
 

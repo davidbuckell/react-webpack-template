@@ -7,12 +7,6 @@ import Layout from "./components/pagestructure/layout";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const routes = [
-    { path: '/', Component: HomePage },
-    { path: '/hub', Component: HubPage },
-    { path: 'content', Component: ContentPage },
-  ]
-
   const location = useLocation();
 
   return (

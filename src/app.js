@@ -5,6 +5,7 @@ import HubPage from "./pagetemplates/hubpage";
 import ContentPage from "./pagetemplates/contentpage";
 import Layout from "./components/pagestructure/layout";
 import { AnimatePresence } from "framer-motion";
+import SecurePage from "./pagetemplates/securepage";
 
 function App() {
   const location = useLocation();
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="hub" element={<HubPage />} />
           <Route path="content" element={<ContentPage />} />
+          <Route path="secure-page" element={<SecurePage />} />          
           <Route path="*" element={<div>Oops! nothing here</div>} />
         </Route>
       </Routes>

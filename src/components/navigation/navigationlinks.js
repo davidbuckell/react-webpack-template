@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { AuthenticatedTemplate } from "@azure/msal-react";
 
 function NavigationLinks() {
     return (
@@ -11,15 +12,14 @@ function NavigationLinks() {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="hub">Hub</Link></li>
                 <li><Link to="content">Content</Link></li>
+                <AuthenticatedTemplate>
                 <li>
-                    <span className="opener">Submenu</span>
+                    <span className="opener">Secure Content</span>
                     <ul>
-                        <li><a href="#">Lorem Dolor</a></li>
-                        <li><a href="#">Ipsum Adipiscing</a></li>
-                        <li><a href="#">Tempus Magna</a></li>
-                        <li><a href="#">Feugiat Veroeros</a></li>
+                        <li><a href="secure-page">Secure Page</a></li>
                     </ul>
                 </li>
+                </AuthenticatedTemplate>
                 <li><a href="#">Etiam Dolore</a></li>
                 <li><a href="#">Adipiscing</a></li>
                 <li>

@@ -237,14 +237,16 @@ window.executeMainJs = function($) {
 	// Menu.
 		var $menu = jQuery('#menu'),
 			$menu_openers = $menu.children('ul').find('.opener');
-
+			
 		// Openers.
 			$menu_openers.each(function() {
 
 				var $this = jQuery(this);
 
-				$this.on('click', function(event) {
+				$this.off('click');
 
+				$this.on('click', function(event) {
+					
 					// Prevent default.
 						event.preventDefault();
 

@@ -16,7 +16,7 @@ function NavigationLinks() {
                 <li>
                     <span className="opener">Secure Content</span>
                     <ul>
-                        <li><a href="secure-page">Secure Page</a></li>
+                        <li><Link to="secure-page">Secure Page</Link></li>
                     </ul>
                 </li>
                 </AuthenticatedTemplate>

@@ -11,7 +11,7 @@ import { SignOutButton } from "../authentication/signOutButton";
 function SideNavigation() {
     const isAuthenticated = useIsAuthenticated();
 
-    useEffect(() => {                
+    useEffect(() => {        
         window.executeMainJs();
     }, []);
 

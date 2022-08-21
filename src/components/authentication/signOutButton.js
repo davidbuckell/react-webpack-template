@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useMsal } from "@azure/msal-react";
 
 function handleRedirectLogout(instance) {
@@ -15,6 +15,10 @@ function handlePopupLogout(instance) {
 
 export const SignOutButton = () => {
     const { instance } = useMsal();
+
+    useEffect(() => {
+        window.executeMainJs();
+    }, []);
 
     return (
         <ul className="actions stacked">

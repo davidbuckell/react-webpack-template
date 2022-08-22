@@ -1,3 +1,5 @@
 .idea
+.deployment
+.vscode
 node_modules
 dist

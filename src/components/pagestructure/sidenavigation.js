@@ -26,7 +26,7 @@ function SideNavigation() {
                     <Footer />
                 </div>
             </React.Fragment>
-        </div >
+        </div>
     );
 }
 

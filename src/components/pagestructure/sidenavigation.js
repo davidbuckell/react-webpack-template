@@ -13,6 +13,7 @@ function SideNavigation() {
 
     useEffect(() => {        
         window.executeMainJs();
+        document.body.classList.remove('is-preload');
     }, []);
 
     return (

@@ -25,8 +25,8 @@ window.executeMainJs = function($) {
 	// Stops animations/transitions until the page has ...
 
 		// ... loaded.
-			$window.on('load', function() {
-				window.setTimeout(function() {
+			$window.on('load', function() {				
+				window.setTimeout(function() {					
 					$body.removeClass('is-preload');
 				}, 100);
 			});
@@ -87,12 +87,12 @@ window.executeMainJs = function($) {
 			&&	browser.name == 'chrome')
 				jQuery('<style>#sidebar .inner::-webkit-scrollbar { display: none; }</style>')
 					.appendTo($head);
-
+		
 		// Toggle.
 			jQuery('<a href="#sidebar" class="toggle">Toggle</a>')
 				.appendTo($sidebar)
 				.on('click', function(event) {
-
+					
 					// Prevent default.
 						event.preventDefault();
 						event.stopPropagation();

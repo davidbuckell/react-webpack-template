@@ -3,6 +3,7 @@ const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
     devtool: 'source-map',
@@ -34,6 +35,14 @@ module.exports = merge(common, {
     plugins: [
       new MiniCssExtractPlugin({
         filename: '[name].[fullhash].css',
+      }),
+      new CopyPlugin({
+        patterns: [
+          { from: "routes.json", to: "." }
+        ],
+        options: {
+          concurrency: 100,
+        },
       }),
     ],
   });

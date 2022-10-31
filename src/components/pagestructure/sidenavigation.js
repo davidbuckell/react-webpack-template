@@ -7,9 +7,14 @@ import { useIsAuthenticated } from "@azure/msal-react";
 import { SignInButton } from "../authentication/signInButton";
 import { SignOutButton } from "../authentication/signOutButton";
 
-
 function SideNavigation() {
     const isAuthenticated = useIsAuthenticated();
+    const pages = [
+        { id: 0, title: 'home', url: '/' },
+        { id: 1, title: 'hub', url: 'hub' },
+        { id: 2, title: 'content', url: 'content' },
+        { id: 3, title: 'secure page', url: 'secure-page' }
+    ];
 
     useEffect(() => {        
         window.executeMainJs();
@@ -20,7 +25,7 @@ function SideNavigation() {
         <div id="sidebar">
             <React.Fragment>
                 <div className="inner">
-                    <Search />
+                    <Search pages={pages} />
                     { isAuthenticated ? <SignOutButton/> : <SignInButton/> }
                     <NavigationLinks />
                     <NavigationHubLinks />

@@ -13,7 +13,7 @@ function SideNavigation() {
         { id: 0, title: 'home', url: '/' },
         { id: 1, title: 'hub', url: 'hub' },
         { id: 2, title: 'content', url: 'content' },
-        { id: 3, title: 'secure page', url: 'secure-page' }
+        { id: 3, title: 'secure page', url: 'secure-page', isSecure: true }
     ];
 
     useEffect(() => {        

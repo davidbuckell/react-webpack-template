@@ -1,9 +1,11 @@
 import React from "react";
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { useIsAuthenticated } from "@azure/msal-react";
 
 const Search = (props) => {
-    var pages = props.pages;
-    console.log('pages: ' + JSON.stringify(pages));
+    const isAuthenticated = useIsAuthenticated();
+    var pages = isAuthenticated ? props.pages : props.pages.filter(p => !p.isSecure);    
+    console.log('logged in: ' + isAuthenticated + '. pages: ' + JSON.stringify(pages));
 
     const handleOnSearch = (string, results) => {
         // string = search term, results = search results
@@ -17,7 +19,6 @@ const Search = (props) => {
     const formatResult = (item) => {
         return (
           <>
-            {/*<span style={{ display: 'block', textAlign: 'left' }}>id: {item.id}</span>*/}
             <span style={{ display: 'block', textAlign: 'left' }}>{item.title}</span>
           </>
         )

@@ -20,3 +20,6 @@ export const loginRequest = {
 export const graphConfig = {
     graphMeEndpoint: "https://graph.microsoft.com/v1.0/me"
 };
+
+// app settings
+// https://learn.microsoft.com/en-us/javascript/api/overview/azure/app-configuration-readme?view=azure-node-latest
